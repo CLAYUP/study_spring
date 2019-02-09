@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 /**
- * 用户controller层
+ * 前台用户controller层
  *
  * @author ：Y.
  * @version : V1.0
@@ -204,9 +204,18 @@ public class UserController {
         return response;
     }
 
+    /**
+     * 获取用户信息
+     *
+     * @param session 会话
+     * @return :com.mmallnew.common.ServiceResponse<com.mmallnew.pojo.User>
+     * @author :Y.
+     * @date :22:45 2019/2/9
+     */
     @RequestMapping(value = "get_information.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServiceResponse<User> get_information(HttpSession session) {
+    public ServiceResponse<User> getInformation(HttpSession session) {
+
         User currentUser = (User) session.getAttribute(Const.CURRENT_USER);
         if (currentUser == null) {
             return ServiceResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录,需要强制登录status=10");

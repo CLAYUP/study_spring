@@ -110,5 +110,13 @@ public interface IUserService {
      */
     ServiceResponse<User> getInformation(Integer userId);
 
+    /**
+     * 检查是否管理员
+     *
+     * @param user pojo
+     * @return ServiceResponse
+     * @author Y.
+     * @date 23:34 2019/2/9
+     */
     ServiceResponse checkAdminRole(User user);
 }

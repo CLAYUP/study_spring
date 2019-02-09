@@ -15,6 +15,8 @@ import java.util.UUID;
 
 
 /**
+ * 用户服务类
+ *
  * @author ：Y.
  * @version : $version$
  * @date ：Created in 14:29 2019/2/7

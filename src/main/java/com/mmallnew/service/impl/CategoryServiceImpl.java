@@ -7,7 +7,6 @@ import com.mmallnew.dao.CategoryMapper;
 import com.mmallnew.pojo.Category;
 import com.mmallnew.service.ICategoryService;
 import org.apache.commons.lang3.StringUtils;
-import org.aspectj.lang.annotation.AdviceName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,8 @@ import org.springframework.util.CollectionUtils;
 import java.util.*;
 
 /**
+ * 实现接口
+ *
  * @author ：Y.
  * @version : V1.0
  * @date ：Created in 21:46 2019/2/8
@@ -30,7 +31,7 @@ public class CategoryServiceImpl implements ICategoryService {
     private CategoryMapper categoryMapper;
 
     @Override
-    public ServiceResponse addCategory(String categoryName, Integer parentId) {
+    public ServiceResponse<String> addCategory(String categoryName, Integer parentId) {
         if (parentId == null || StringUtils.isBlank(categoryName)) {
             return ServiceResponse.createByErrorMessage("添加品类参数错误");
         }
@@ -48,7 +49,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public ServiceResponse updateCategoryName(Integer categoryId, String categoryName) {
+    public ServiceResponse<String> updateCategoryName(Integer categoryId, String categoryName) {
         if (categoryId == null || StringUtils.isBlank(categoryName)) {
             return ServiceResponse.createByErrorMessage("更新品类参数错误");
         }
@@ -65,7 +66,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     @Override
-    public ServiceResponse<List<Category>> getChildrentParallelCategory(Integer categoryId) {
+    public ServiceResponse<List<Category>> getChildrenParallelCategory(Integer categoryId) {
         List<Category> categories = categoryMapper.selectCategoryChildrenByParentId(categoryId);
         if (CollectionUtils.isEmpty(categories)) {
             logger.info("未找到当分类的子分类");
@@ -73,16 +74,8 @@ public class CategoryServiceImpl implements ICategoryService {
         return ServiceResponse.createBySuccess(categories);
     }
 
-    /**
-     * 递归查询本节点的id及孩子节点的id
-     *
-     * @param categoryId 节点id
-     * @return :com.mmallnew.common.ServiceResponse
-     * @author :Y.
-     * @date :22:29 2019/2/8
-     */
     @Override
-    public ServiceResponse selectCategoryAndChildrenById(Integer categoryId) {
+    public ServiceResponse<ArrayList<Integer>> selectCategoryAndChildrenById(Integer categoryId) {
 
         Set<Category> categorySet = Sets.newHashSet();
 

@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 /**
- * 管理员类
+ * 后台管理用户
  *
- * @author ：Y.
- * @version : V1.0
- * @date ：Created in 19:59 2019/2/7
+ * @author Y.
+ * @version V1.0
+ * @date Created in 1959 2019/2/7
  */
 @Controller
 @RequestMapping("/manage/user")
-public class UserManageContoller {
+public class UserManageController {
 
     @Autowired
     private IUserService iUserService;
@@ -32,9 +32,9 @@ public class UserManageContoller {
      * @param username 用户
      * @param password 密码
      * @param session  会话
-     * @return :com.mmallnew.common.ServiceResponse<com.mmallnew.pojo.User>
-     * @author :Y.
-     * @date :22:30 2019/2/7
+     * @return com.mmallnew.common.ServiceResponse<com.mmallnew.pojo.User>
+     * @author Y.
+     * @date 2230 2019/2/7
      */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody

@@ -3,7 +3,6 @@ package com.mmallnew.util;
 import java.security.MessageDigest;
 
 /**
- * Created by geely
  *
  * @author Yang
  */

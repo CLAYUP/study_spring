@@ -3,6 +3,13 @@ package com.mmallnew.pojo;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * 分类 pojo
+ *
+ * @author ：Y.
+ * @version : v1.0
+ * @date ：Created in 19:59 2019/2/5
+ */
 public class Category {
     private Integer id;
 

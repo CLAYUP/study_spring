@@ -3,6 +3,13 @@ package com.mmallnew.pojo;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 订单 pojo
+ *
+ * @author ：Y.
+ * @version : v1.0
+ * @date ：Created in 19:59 2019/2/5
+ */
 public class Order {
     private Integer id;
 

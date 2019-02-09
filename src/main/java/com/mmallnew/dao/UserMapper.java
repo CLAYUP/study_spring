@@ -11,6 +11,7 @@ import org.apache.ibatis.annotations.Param;
  * @date ：Created in 19:59 2019/2/7
  */
 public interface UserMapper {
+
     /**
      * 根据主键删除记录
      *
@@ -45,7 +46,7 @@ public interface UserMapper {
      * 查询根据主键
      *
      * @param id 主键ID
-     * @return int
+     * @return User
      * @author :Y.
      * @date :22:40 2019/2/7
      */
