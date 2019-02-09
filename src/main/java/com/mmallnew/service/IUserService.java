@@ -109,4 +109,6 @@ public interface IUserService {
      * @date :22:20 2019/2/7
      */
     ServiceResponse<User> getInformation(Integer userId);
+
+    ServiceResponse checkAdminRole(User user);
 }

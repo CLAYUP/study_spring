@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * 管理员类
  *
  * @author ：Y.
- * @version : v1.0
+ * @version : V1.0
  * @date ：Created in 19:59 2019/2/7
  */
 @Controller
@@ -27,6 +27,8 @@ public class UserManageContoller {
     private IUserService iUserService;
 
     /**
+     * 管理员登录
+     *
      * @param username 用户
      * @param password 密码
      * @param session  会话

@@ -19,7 +19,7 @@ import java.util.UUID;
  * @version : $version$
  * @date ：Created in 14:29 2019/2/7
  */
-@Service("iUserService ")
+@Service("iUserService")
 public class UserServiceImpl implements IUserService {
 
     @Autowired
@@ -173,6 +173,14 @@ public class UserServiceImpl implements IUserService {
         }
         user.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
         return ServiceResponse.createBySuccess(user);
+    }
+
+    @Override
+    public ServiceResponse checkAdminRole(User user) {
+        if (user != null && user.getRole() == Const.Role.ROLE_ADMIN) {
+            return ServiceResponse.createBySuccess();
+        }
+        return ServiceResponse.createByError();
     }
 
 }

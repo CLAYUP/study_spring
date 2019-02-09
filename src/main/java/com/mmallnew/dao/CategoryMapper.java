@@ -2,7 +2,13 @@ package com.mmallnew.dao;
 
 import com.mmallnew.pojo.Category;
 
+import java.util.List;
+
+/**
+ * @author Yang
+ */
 public interface CategoryMapper {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Category record);
@@ -14,4 +20,7 @@ public interface CategoryMapper {
     int updateByPrimaryKeySelective(Category record);
 
     int updateByPrimaryKey(Category record);
+
+    List<Category> selectCategoryChildrenByParentId(Integer parentId);
+
 }
