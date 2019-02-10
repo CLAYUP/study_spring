@@ -2,6 +2,9 @@ package com.mmallnew.pojo;
 
 import java.util.Date;
 
+/**
+ * @author Yang
+ */
 public class Shipping {
     private Integer id;
 

@@ -4,10 +4,8 @@ import java.math.BigDecimal;
 
 /**
  * @author ：Y.
+ * @version : V1.0
  * @date ：Created in 16:20 2019/2/9
- * @description：${description}
- * @modified By：
- * @version: $version$
  */
 public class ProductListVo {
     private Integer id;
