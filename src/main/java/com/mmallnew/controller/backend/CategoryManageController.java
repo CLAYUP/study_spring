@@ -128,7 +128,7 @@ public class CategoryManageController {
         if (iUserService.checkAdminRole(user).isSuccess()) {
             /*
             递归查询出所有的子节点和当前节点
-             */
+            */
             return iCategoryService.selectCategoryAndChildrenById(categoryId);
         } else {
             return ServiceResponse.createByErrorMessage("需要管理员权限");
